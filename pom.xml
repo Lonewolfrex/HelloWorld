@@ -31,19 +31,17 @@
   </dependencies>
 
   <distributionManagement>
-    <repositories>
       <repository>
         <id>nexus-release</id>
         <name>HelloWorld-releases</name>
         <url>http://localhost:8081/repository/HelloWorld-releases/</url>
       </repository>
 
-      <repository>
+      <snapshotRepository>
         <id>nexus-snapshot</id>
         <name>HelloWorld-SNAPSHOT</name>
         <url>http://localhost:8081/repository/HelloWorld-Snapshots/</url>
-      </repository>
-    </repositories>
+      </snapshotRepository>
   </distributionManagement>
 
   <build>
