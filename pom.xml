@@ -32,13 +32,13 @@
 
   <repositories>
     <repository>
-      <id>nexus</id>
+      <id>nexus-release</id>
       <name>HelloWorld-releases</name>
       <url>http://localhost:8081/repository/HelloWorld-releases/</url>
     </repository>
 
     <repository>
-      <id>nexus</id>
+      <id>nexus-snapshot</id>
       <name>HelloWorld-SNAPSHOT</name>
       <url>http://localhost:8081/repository/HelloWorld-Snapshots/</url>
     </repository>
