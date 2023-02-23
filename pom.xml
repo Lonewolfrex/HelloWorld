@@ -37,13 +37,11 @@
       <url>http://localhost:8081/repository/HelloWorld-releases/</url>
     </repository>
 
-    <snapshotRepository>
-      <repository>
-        <id>nexus</id>
-        <name>HelloWorld-SNAPSHOT</name>
-        <url>http://localhost:8081/repository/HelloWorld-Snapshots/</url>
-      </repository>
-    </snapshotRepository> 
+    <repository>
+      <id>nexus</id>
+      <name>HelloWorld-SNAPSHOT</name>
+      <url>http://localhost:8081/repository/HelloWorld-Snapshots/</url>
+    </repository>
   </repositories>
 
   <build>
