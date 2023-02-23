@@ -30,7 +30,7 @@
     </dependency>
   </dependencies>
 
-  <distributionManagement>
+  <repositories>
     <repository>
       <id>nexus</id>
       <name>HelloWorld-releases</name>
@@ -44,7 +44,7 @@
         <url>http://localhost:8081/repository/HelloWorld-Snapshots/</url>
       </repository>
     </snapshotRepository> 
-  </distributionManagement>
+  </repositories>
 
   <build>
     <finalName>version1</finalName>
