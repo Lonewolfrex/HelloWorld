@@ -1,0 +1,97 @@
+==============================================
+Practical:
+==============================================
+1. Install Maven (from Maven - download apache)
+    - check if maven is installed: mvn -version
+        if we don't get any input, either maven is not installed or it is installed but not set as env_variable
+    - Like we set JAVA as Env variable , similar way we need to set MAVEN as Env Variable
+    download Binary zip archive for windows and extract it on desired location:
+        in my system: maven is installed in: C:\Program Files\apache-maven-3.8.4\
+    ENV_VARIABLE is updated under SYSTEM_VARIABLES > Path > Click on New and add the following details:
+        M2_HOME = C:\Program Files\apache-maven-3.8.4\
+        MAVEN_HOME = C:\Program Files\apache-maven-3.8.4\
+        Edit Path= C:\Program Files\apache-maven-3.8.4\bin
+        Save and we are good to go
+    - check now by typing mvn -version in cmd prompt and we shall see the version now
+
+2. Integrate Maven with Jenkins
+    - Manage Jenkins > Manage Plugins > Add Maven Integration Plugin > Do a restart of Jenkins  
+    - Jenkins > Global Tool Configuration
+        If Jenkins is running that means JDK is automatically installed ie Jenkins need Java JDK to run
+    - Scroll to Maven 
+        - provide name as MAVEN_HOME and provide the path of Maven root directory: C:\Program Files\apache-maven-3.8.4\
+        and click apply
+    - In order to run the maven commands the pom.xml should be accessible to the Maven and must be present at the root directory of the project
+
+3. Update the settings.xml present inside the path C:\Program Files\apache-maven-3.8.4\conf\settings.xml for the followings:
+        <pluginGroups>
+                <pluginGroup>org.apache.tomcat.maven</pluginGroup>
+        </pluginGroups>    
+
+    Apache Tomcat server with same credentials set as updated in tomcat-users.xml in the following path
+        "C:\Program Files\Apache Software Foundation\Tomcat 9.0\conf\tomcat-users.xml"
+		
+        <server>
+			  <id>maven-tomcat-war-deployment-server</id>
+			  <username>war-deployer</username>
+			  <password>maven-tomcat-plugin</password>
+		</server>
+		
+    Nexus server with same server cresentials as used by Nexus  
+		<server>
+			  <id>nexus</id>
+			  <username>admin</username>
+			  <password>Nexus27</password>
+		</server>
+
+The project I have created is through 
+    maven-archetype-quickstart
+
+==============================================
+Theoretical:
+==============================================
+What is Maven?   
+    - Maven is a build automation tool used primarily for Java projects.
+    - But can also be used to build and manage projects written in C#, Ruby, Scala etc.
+    - Makes it easy to build projects by simply updating the dependencies and plugins in the pom files.
+    - No seperate need of downloading the jar files and other dependencies manually. Taken care by build tool itself.
+    - Easily generates the templates for various types of java projects like Dynamic Web Application, Java EE, Java Maven projects etc with default file structures and basic depedencies.
+    - Provides a pre-generated pom file which could be updated with required dependencies and plugins.
+
+Has 3 repo:
+    - Local: developer's local laptop
+    - Central: Maven's central repo contains a lot of common libraries
+    - Remote: Maven's repo containing files missing from the Central repo could be found here. basically third party libraries like JBoss.
+
+3 lifecycles in Maven:
+    a) site - creates website with info about our maven project inside target > site 
+    b) clean - removes /target folder
+    c) default - main lifecycle consists more than 20 phases, of which following 8 are main phases:
+       
+        i)      Validate: mvn validate
+                -   This step validates if the project structure is correct. For example – It checks if all the dependencies have been downloaded and are available in the local repository.
+        
+        ii)     Compile: 
+                -   It compiles the source code, converts the .java files to .class, and stores the classes in the target/classes folder.
+        
+        iii)    Test: 
+                -   It runs unit tests for the project.
+        
+        iv)     Package: mvn package
+                -   This step packages the compiled code in a distributable format like JAR or WAR.
+        
+        v)      Integration test: 
+                -   It runs the integration tests for the project.
+        
+        vi)     Verify: 
+                -   This step runs checks to verify that the project is valid and meets the quality standards.
+        
+        vii)    Install: mvn install
+                -   This step installs the packaged code to the local Maven repository.
+       
+        viii)   Deploy: mvn deploy
+                -   It copies the packaged code to the remote repository for sharing it with other developers.
+
+Any of the maven command when executed shall execute the previous phase commands by default
+mvn clean : clears the previously generated build
+mvn clean install : clears the previously generated build and then install

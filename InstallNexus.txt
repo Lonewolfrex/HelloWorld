@@ -1,0 +1,13 @@
+1. Install Nexus
+    - I have installed in windows
+    a)  Install the Nexus (community version)
+            Windows: Install from .exe file
+
+    b)  Once the installation is completed, the one-time password could be taken from
+            Windows: Default port:8081
+    
+    c)  Configure the repositories
+        - Login with credentials admin / Nexus27
+        - Navigate to Settings > Create repositories
+            1) HelloWorld-releases
+            2) HelloWorld-Snapshots (all the created war/jar files shall be stored here)

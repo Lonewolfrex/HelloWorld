@@ -1,0 +1,23 @@
+1. Installed tomcat 9.0 and is currently running on port 8089
+    configure the port in "C:\Program Files\Apache Software Foundation\Tomcat 9.0\conf\server.xml"
+        <Connector port="8089" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" />
+    
+    configure the maven war deploy users and roles in "C:\Program Files\Apache Software Foundation\Tomcat 9.0\conf\tomcat-users.xml"
+        <user username="war-deployer" password="maven-tomcat-plugin" roles="manager-gui, manager-script, manager-jmx, manager-status"  />
+
+2. Tomcat is used to deploy the war file and then hosts the web-application on the specific port mentioned
+    eg:- http://localhost:8089/version1/
+
+3. Same set of credentials must be updated in the pom file of the project under the plugin dependencies
+
+<plugin>
+    <groupId>org.apache.tomcat.maven</groupId>
+    <artifactId>tomcat7-maven-plugin</artifactId>
+    <version>2.0</version>
+    <configuration>
+        <url>http://localhost:8089/manager/text</url>
+        <path>/version1</path>
+        <username>war-deployer</username>
+        <password>maven-tomcat-plugin</password>
+    </configuration>
+</plugin>

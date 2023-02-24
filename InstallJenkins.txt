@@ -1,0 +1,20 @@
+1. Install jenkins
+    - I have installed in windows
+    a)  Install the Jenkins
+            Windows: Install from .exe file
+            Mac:  brew install jenkins-lts
+
+    b)  Once the installation is completed, the one-time password could be taken from
+            Windows: C:\Program Files\Jenkins\secrets\initialAdminPassword text
+            Mac/Linux: /var/jenkins_home/secrets/initialAdminPassword
+
+        provide the username and new password
+        and restart the jenkins: 
+            Windows: From Services App right click on Jenkins job and restart
+            Mac/Linux: brew services restart jenkins-lts
+
+    c)  Update the Jenkins Port to different Port (default port is 8080)
+        Update the http_port=8082 (My current port)
+            Windows: C:\Program Files\Jenkins\jenkins.xml
+            Mac/Linux: /etc/default/jenkins
+        And restart the Jenkins
