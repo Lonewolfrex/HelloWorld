@@ -121,6 +121,11 @@
     <body>
     
     <div class="header">
+      <h1>My Blogging page</h1>
+      <p>A <b>responsive</b> website created by me.</p>
+    </div>
+    
+    <div class="navbar">
         <nav class="bg-gray-800">
             <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
               <div class="relative flex h-16 items-center justify-between">
@@ -216,13 +221,6 @@
               </div>
             </div>
           </nav>
-    </div>
-    
-    <div class="navbar">
-      <a href="#" class="active">Home</a>
-      <a href="#">Link</a>
-      <a href="#">Link</a>
-      <a href="#" class="right">Link</a>
     </div>
     
     <div class="row">
