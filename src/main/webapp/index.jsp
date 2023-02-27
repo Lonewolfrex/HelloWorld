@@ -122,7 +122,7 @@
     
     <div class="header">
       <h1>My Blogging page</h1>
-      <p>A <b>responsive</b> website created by me.</p>
+      <p>A <b>responsive</b> website created by Khushboo.</p>
     </div>
     
     <div class="navbar">
@@ -141,7 +141,7 @@
                 <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
               </div>
             </div>
-          </nav>
+        </nav>
     </div>
     
     <div class="row">
