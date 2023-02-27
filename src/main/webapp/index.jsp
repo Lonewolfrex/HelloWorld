@@ -121,7 +121,7 @@
     <body>
     
     <div class="header">
-      <h1>My Blogging page</h1>
+      <h1>My Blogging page created by Khushboo</h1>
       <p>A <b>responsive</b> website created by Khushboo.</p>
     </div>
     
