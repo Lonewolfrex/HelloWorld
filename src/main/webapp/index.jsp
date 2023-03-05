@@ -148,7 +148,7 @@
       <div class="side">
         <h2>About Me</h2>
         <h5>Photo of me:</h5>
-        <img src="C:\coinDCX\New folder\HelloWorld\src\main\webapp\index.jsp" alt="Italian Trulli">
+        <img src="C:\coinDCX\New folder\HelloWorld\src\main\webapp\images\Screenshot 2023-03-05 152413.png" alt="Italian Trulli">
         <p>Profile pic here</p>
         <h3>More Text</h3>
         <p>Lorem ipsum dolor sit ame.</p>
